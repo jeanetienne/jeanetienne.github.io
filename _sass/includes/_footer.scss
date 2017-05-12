@@ -1,0 +1,13 @@
+.site-footer {
+  @extend %padding-regular;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: lighten($text-color, 65%);
+  font-size: 0.6em;
+  
+  a {
+    color: lighten($text-color, 60%);
+  }  
+}
+

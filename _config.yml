@@ -1,0 +1,68 @@
+# SITE CONFIGURATION
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jeanetienne.net" # the base hostname & protocol for your site
+
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: Jean-Étienne's Blog
+  avatar: 
+  gravatar: # Email MD5 hash
+  description: Software engineering, iOS development and any other topic. # used by search engines
+
+  # Header and footer text
+  header_text: Software engineering, iOS development and any other topic.
+  header_text_feature_image:
+  footer_text: >
+   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type">Type Theme</a>
+
+  # Icons
+  rss: false
+
+  email_address: contact@jeanetienne.net
+  github: jeanetienne
+  twitter: jeanetienne
+  flickr: jeanetienne
+  tumblr: jeanetienne
+ 
+  stack_exchange:  # Full URL
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  steam:
+  wordpress:
+  youtube:
+
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: false # Enable if using math markup
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next: "Next"
+  str_prev: "Previous"
+  str_continue_reading: "Continue reading"
+
+  # Post navigation
+  post_navigation: false
+
+# PAGINATION
+paginate: 10
+paginate_path: "/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
