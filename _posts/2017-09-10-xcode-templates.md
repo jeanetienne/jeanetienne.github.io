@@ -523,7 +523,7 @@ After all of this, you should end up with the following folder structure:
 
 The customisation if the View files (different `init` for different ways of loading the view, depending on the type of view) and the XIB file is left as an exercise for the reader 😁. 
 
-You can find the [source for this template on GitHub](https://github.com/jeanetienne).
+You can find the [source for this template on GitHub 🐙](https://github.com/jeanetienne/xcode-9-file-template-examples).
 
 You now have a pretty advanced Xcode template that can generate several files with several variations of your own custom boilerplate. It even lets you choose if you want to generate a XIB file or not. That's pretty neat!
 
@@ -547,4 +547,4 @@ Xcode.app/Contents/Developer/Platforms/<platform>/Developer/Library/Xcode/Templa
 An invaluable reference is [Steffen Itterheim's "Xcode 4 Template Documentation"](http://www.learn-cocos2d.com/store/xcode4-template-documentation). Steffen made this book free a few years ago, so you have no reason not to grab it. it's obviously a bit outdated, but is still very helpful. 
 
 # <a name="comments" href="#comments">Comments</a>
-Feel free to comment on [Hacker News](https://news.ycombinator.com) or reach out on [twitter](https://twitter.com/jeanetienne)
+Feel free to comment on [Hacker News](https://news.ycombinator.com/item?id=15238181) or reach out on [Twitter 🐦](https://twitter.com/jeanetienne)
