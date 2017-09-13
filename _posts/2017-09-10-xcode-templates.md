@@ -316,7 +316,7 @@ class ___FILEBASENAMEASIDENTIFIER___ {
 
 When using the template, if the user types "Person" in the name field for instance, the files will be generated with the names:  `Person.swift`, `PersonView.swift` and `PersonViewModel.swift`, as expected.
 
-However, in a rather confusing but also smart move, Xcode seems to be re-evaluating the `FILEBASENAME` (and other equivalents) macro in context, inside the file. Once inside the file, the `FILEBASENAME` macro has the value "PersonViewModel", which is the actual final name of the file, and is pretty useful for nameing the class. If you want to have the raw input of what the user typed, the word "Person", you need to use the value of the `productName` variable.
+However, in a rather confusing but also smart move, Xcode seems to be re-evaluating the `FILEBASENAME` macro (and `FILEBASENAMEASIDENTIFIER`) in context. Inside the file, the `FILEBASENAME` macro has the value "PersonViewModel", which is the actual final name of the file, and is pretty useful for nameing the class. If you want to have the raw input of what the user typed, the word "Person", you need to use the value of the `productName` variable.
 
 Variables are based on the identifier of the "option" defined in the PList. For an option with identifier `optionName` you can access its value with `___VARIABLE_optionName___`. You can also add colon separated modifiers to this macro, all of this is explained in the [Xcode Text macro format reference](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9). 
 
