@@ -7,13 +7,13 @@ plugins: [jekyll-paginate]
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: Jean-Étienne's Blog
+  title: They call me Jet
   avatar: 
   gravatar: # Email MD5 hash
-  description: Software engineering, iOS development and any other topic. # used by search engines
+  description: Sporadic posts, mostly about iOS development, and any other topic. # used by search engines
 
   # Header and footer text
-  header_text: Software engineering, iOS development and any other topic.
+  header_text: Sporadic posts, mostly about iOS development, and any other topic.
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type">Type Theme</a>
@@ -33,7 +33,7 @@ theme:
   dribbble:
   facebook:
   google_plus:
-  instagram:
+  instagram: jean.et.ienne
   linkedin:  # Full URL
   pinterest:
   reddit:
