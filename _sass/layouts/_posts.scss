@@ -17,6 +17,9 @@ article {
   .footnotes {
     font-size: 0.9em;
   }
+  p {
+    text-align: justify;
+  }
 }
 header {
   h1 {
@@ -80,3 +83,25 @@ header {
   }
 }
 
+code, pre {
+  background-color: #F1F1F1;
+}
+
+pre {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+p > code {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+li > ul {
+  margin-left: 2em;
+  margin-bottom: 0;
+}
+
+figure.highlight {
+  margin: 0;
+}

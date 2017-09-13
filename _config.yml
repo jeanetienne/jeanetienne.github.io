@@ -2,6 +2,8 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jeanetienne.net" # the base hostname & protocol for your site
 
+plugins: [jekyll-paginate]
+
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
@@ -57,7 +59,7 @@ theme:
   post_navigation: false
 
 # PAGINATION
-paginate: 10
+paginate: 1
 paginate_path: "/page:num"
 
 # BUILD SETTINGS
