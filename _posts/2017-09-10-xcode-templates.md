@@ -72,7 +72,7 @@ The minimal PList file looks like this:
 
 Now you should be able to see something like the following screenshot in Xcode:
 
-![]({{ site.url }}/img/screenshot-1.png)
+![](/img/screenshot-1.png)
 
 A `Description` and a `Summary` key were used in prior versions of Xcode to display a tooltip and a description. It looks like because of UI changes in more recent versions, Xcode doesn't use those keys anymore.
 
@@ -158,7 +158,7 @@ ListModule.xib
 
 Of course you can customise each file with whatever source makes sense in your context, but you'd still go through a Save dialog like this one:
 
-![]({{ site.url }}/img/screenshot-2.png)
+![](/img/screenshot-2.png)
 
 Which makes you feel like you're creating a single file... So let's see how we can display a "configuration panel" with text fields, drop down menus and checkboxes, much like the default "Cocoa Touch Class" template that lets you choose a few options before generating one or several files. 
 
@@ -229,7 +229,7 @@ An "option dictionary" has the following keys:
 
 As soon as there's one option under the `Options` key, Xode will present a panel titled "Choose options for your new file".
 
-![]({{ site.url }}/img/screenshot-3.png)
+![](/img/screenshot-3.png)
 
 ## <a name="adding-options" href="#adding-options">Adding Options</a>
 Let's add a name for the View/ViewModel. To do so we need to add the following option to the `Options` key, like so:
@@ -291,7 +291,7 @@ The full PList may look like this now:
 
 With this you should see the following screen in Xcode when you select your template:
 
-![]({{ site.url }}/img/screenshot-4.png)
+![](/img/screenshot-4.png)
 
 *Note: The description appears if you hover over the label* 😉.
 
@@ -463,7 +463,7 @@ So now your PList should look like this:
 
 And your template options panel should look like this:
 
-![]({{ site.url }}/img/screenshot-5.png)
+![](/img/screenshot-5.png)
 
 For this to actually work we need to go back to the files, and reorganise them. We need a subfolder for each variation in the `.xctemplate` folder. The subfolders need to follow a certain naming convention. For a `popup` (and I assume it works similarly for a `combo`, but I haven't tested), the subfolders need to match the name of the possible values of the popup, for a `checkbox`, it just needs to match the `identifier` of the checkbox. If you want to combine values, you just append them in the order they are presented to the user.
 
