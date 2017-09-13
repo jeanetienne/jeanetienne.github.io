@@ -3,9 +3,9 @@ layout: post
 title: Xcode 9 File Templates
 ---
 
-When you're working on a new area of a project, adding new features, writing new code, or even refactoring and reorganising existing code, you often end up creating a lot of new files. The most common way to do so is through the File > New > File... menu in Xcode. Depending on the type of file, you may end up with a more or less elaborate template, with some boilerplate code to help you get started. This can be useful when getting to know the Apple frameworks, or later to save some time writing boring code. Wouldn't it be nice to further customise these templates? To have templates specifically tailored to your own style, projects or tastes? Let's see how to create your own file template with Xcode 9.
+When you're working on a new area of a project, adding new features, writing new code, or even refactoring and reorganising existing code, you often need to create a lot of new files. The most common way to do so is through the File > New > File... menu in Xcode. Depending on the type of file, you may end up with a more or less elaborate template, with some boilerplate code to help you get started. This can be useful when getting to know the Apple frameworks, or later to save some time writing boring code. Wouldn't it be nice to further customise these templates? To have templates specifically tailored to your own style, projects or tastes? Let's see how to create your own file template with Xcode 9.
 
-Before we start taking about how to customise entire file templates, let's have a quick look at the file headers. Ole Begemann has [a thorough article](https://oleb.net/blog/2017/07/xcode-9-text-macros) on this topic. The gist of it is the use of a new text macro introduced in Xcode 9, that all Xcode default templates use: `FILEHEADER`. Ole's article goes in detail about the little quirks and limitiations of this macro. It allows you to customise the file header of any templated file, yours as well as the default Apple ones.
+Before we start talking about how to customise entire file templates, let's have a quick look at the file headers. Ole Begemann has [a thorough article](https://oleb.net/blog/2017/07/xcode-9-text-macros) on this topic. Apple introduced a new text macro in Xcode 9 that all default templates use: `FILEHEADER`. Ole's article goes in detail about the little quirks and limitiations of this macro. It allows you to customise the file header of any templated file, yours as well as the default Apple ones.
 
 I don't think there's any official documentation to support the Xcode templating system, so what's presented here is from my tinkering with Xcode 9 (beta 6), so take it with a grain of salt.
 
@@ -19,13 +19,10 @@ I don't think there's any official documentation to support the Xcode templating
 - [Comments](#comments)
 
 # <a name="anatomy-file-template" href="#anatomy-file-template">Anatomy of a File Template</a>
-At the file system level, a Xcode File Template is just a folder with a few conventions. User-defined templates should be located in:
+At the file system level, an Xcode File Template is just a folder with a few conventions. User-defined templates should be located in:
 ```
 ~/Library/Developer/Xcode/Templates/File Templates/<Custom Group Name>
 ```
-Similarly Project Templates would be located in:
-`~/Library/Developer/Xcode/Templates/Project Templates/<Custom Group Name>` but this is beyond the scope of this article.
-
 You can have any number of groups, for this article let's go with `My Custom Templates`. Within this folder you can create any number of templates. So let's imagine we start with a new folder called `Basic Template.xctemplate`, that's our first Xcode File Template.
 
 At the very minimum you'll need the following:
@@ -227,7 +224,7 @@ An "option dictionary" has the following keys:
 | `RequiredOptions` | Can be used to enable the current option, only if certain values of another option are selected. For example, only enabling a checkbox for some values of another popup option. The key of the dictionary must be the identifier of the other option, and the value of the dictionary must be the array of subset of values from the `popup` or `combo` option that allow the current option to be enabled. | Dictionary |
 | `SortOrder`       | Can be used to change the order in which the options are displayed, otherwise they are displayed in the order they are entered in the `Options` array. | Number |
 
-As soon as there's one option under the `Options` key, Xode will present a panel titled "Choose options for your new file".
+As long as there's one option under the `Options` key, Xode will show a panel titled "Choose options for your new file".
 
 ![](/img/screenshot-3.png)
 
@@ -254,7 +251,7 @@ Let's add a name for the View/ViewModel. To do so we need to add the following o
 </array>
 {% endhighlight %}
 
-**⚠️ IMPORTANT:** One very important detail to note here is the `identifier` of the option. For Xcode to know that this is how you want to name the files (and to populate the `FILEBASENAME` and `FILEBASENAMEASIDENTIFIER` macro), you need to stick to **`productName`**.
+**⚠️ IMPORTANT:** Note the `identifier` of the option: For Xcode to know that it is the base name you want to use for the files (and to populate the `FILEBASENAME` and `FILEBASENAMEASIDENTIFIER` macro), you need to stick to **`productName`**.
 
 The full PList may look like this now:
 {% highlight xml %}
@@ -317,9 +314,11 @@ class ___FILEBASENAMEASIDENTIFIER___ {
 }
 {% endhighlight %}
 
-In this case, the file template is `___FILEBASENAME___ViewModel.swift` on disk, so if you typed "Person" in the name field when creating the files, you would have a `PersonViewModel.swift` file, as expected. However, in a rather confusing but also smart move, Xcode seems to be re-evaluating the macro in context, inside the file. So now the `FILEBASENAMEASIDENTIFIER` and `FILEBASENAME` would have the value "PersonViewModel", which is useful for the name of the class. So if we want to have the raw input, we need to use the value of the `productName` variable. 
+When using the template, if the user types "Person" in the name field for instance, the files will be generated with the names:  `Person.swift`, `PersonView.swift` and `PersonViewModel.swift`, as expected.
 
-You can access variables in templates, they are based on the name of the "option" defined in the PList. For an option of name `optionName` you can access its value with `___VARIABLE_optionName___`. You can also add colon separated modifiers to this macro, all of this is explained in the [Xcode Text macro format reference](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9). 
+However, in a rather confusing but also smart move, Xcode seems to be re-evaluating the `FILEBASENAME` (and other equivalents) macro in context, inside the file. Once inside the file, the `FILEBASENAME` macro has the value "PersonViewModel", which is the actual final name of the file, and is pretty useful for nameing the class. If you want to have the raw input of what the user typed, the word "Person", you need to use the value of the `productName` variable.
+
+Variables are based on the identifier of the "option" defined in the PList. For an option with identifier `optionName` you can access its value with `___VARIABLE_optionName___`. You can also add colon separated modifiers to this macro, all of this is explained in the [Xcode Text macro format reference](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9). 
 
 In our case we want a C identifier from the variable named `productName`, so we use `___VARIABLE_productName:identifier___`. Yep, it's a bit wild 😱.
 
@@ -495,7 +494,7 @@ ln model.swift ___FILEBASENAME__.swift
 
 Repeat the same steps for the ViewModel file, then simply paste a regular copy of the `___FILEBASENAME__View.swift` in each template subfolder. You can also create a basic XIB file in Xcode and include it in the ugly named folder `XIB filegenerateXIBfile`. In the XIB file you may want to edit the XML to add a `FILEBASENAMEASIDENTIFIER` macro to help link it to its base class. 
 
-After all of this, you should end up with the following folder structure:
+Once you've done all of this, you should end up with the following folder structure:
 ```
 📂 View, Model & ViewModel.xctemplate
   📂 base
@@ -544,7 +543,7 @@ or
 Xcode.app/Contents/Developer/Platforms/<platform>/Developer/Library/Xcode/Templates/
 ```
 
-An invaluable reference is [Steffen Itterheim's "Xcode 4 Template Documentation"](http://www.learn-cocos2d.com/store/xcode4-template-documentation). Steffen made this book free a few years ago, so you have no reason not to grab it. it's obviously a bit outdated, but is still very helpful. 
+An invaluable reference is [Steffen Itterheim's "Xcode 4 Template Documentation"](http://www.learn-cocos2d.com/store/xcode4-template-documentation). Steffen made this book free a few years ago, so you have no reason not to grab it. It's obviously a bit outdated, but is still very helpful. 
 
 # <a name="comments" href="#comments">Comments</a>
 Feel free to comment on [Hacker News](https://news.ycombinator.com/item?id=15238181) or reach out on [Twitter 🐦](https://twitter.com/jeanetienne)
