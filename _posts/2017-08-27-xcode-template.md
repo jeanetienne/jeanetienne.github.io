@@ -165,7 +165,7 @@ Of course you can customise each file with whatever source makes sense in your c
 
 Which makes you feel like you're creating a single file... 
 
-In the [second part of this article (Advanced Xcode 9 Template)]({% post_url 2017-09-10-advanced-xcode-template %}), we'll see how we can display a "configuration panel" with text fields, drop down menus and checkboxes, much like the default "Cocoa Touch Class" template that lets you choose a few options before generating one or several files. 
+In the [second part of this article (Advanced Xcode 9 File Template)]({% post_url 2017-09-10-advanced-xcode-template %}), we'll see how we can display a "configuration panel" with text fields, drop down menus and checkboxes, much like the default "Cocoa Touch Class" template that lets you choose a few options before generating one or several files. 
 
 You can find the [source for this template on GitHub 🐙](https://github.com/jeanetienne/xcode-9-file-template-examples).
 

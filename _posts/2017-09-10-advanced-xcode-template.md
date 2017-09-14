@@ -3,7 +3,7 @@ layout: post
 title: Advanced Xcode 9 File Template (Part 2)
 ---
 
-In the [first part of this article (Simple Xcode 9 Template)]({% post_url 2017-08-27-xcode-template %}) we saw how to create a simple Xcode File Template to generate a custom file. Let's go beyond the Copy/Paste type of template, and see what we can do to make a more dynamic template with options to let the user tailor the generated files.
+In the [first part of this article (Simple Xcode 9 File Template)]({% post_url 2017-08-27-xcode-template %}) we saw how to create a simple Xcode File Template to generate a custom file. Let's go beyond the Copy/Paste type of template, and see what we can do to make a more dynamic template with options to let the user tailor the generated files.
 
 ### Table of Contents
 - [Adding Options](#adding-options)
