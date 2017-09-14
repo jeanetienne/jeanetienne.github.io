@@ -181,4 +181,4 @@ Xcode.app/Contents/Developer/Platforms/<platform>/Developer/Library/Xcode/Templa
 An invaluable reference is [Steffen Itterheim's "Xcode 4 Template Documentation"](http://www.learn-cocos2d.com/store/xcode4-template-documentation). Steffen made this book free a few years ago, so you have no reason not to grab it. It's obviously a bit outdated, but is still very helpful. 
 
 # <a name="comments" href="#comments">Comments</a>
-Feel free to comment on [Hacker News](https://news.ycombinator.com) or reach me on [Twitter 🐦](https://twitter.com/jeanetienne)
+Feel free to comment on [Hacker News](https://news.ycombinator.com/item?id=15244088) or reach me on [Twitter 🐦](https://twitter.com/jeanetienne)
