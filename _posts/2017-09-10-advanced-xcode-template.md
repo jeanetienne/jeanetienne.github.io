@@ -94,13 +94,13 @@ Let's add a name for the View/ViewModel. To do so we need to add the following o
     <key>Required</key>
     <true/>
     <key>Name</key>
-    <string>View:</string>
+    <string>Model:</string>
     <key>Description</key>
-    <string>The name of the View and ViewModel to create</string>
+    <string>The name of the Model, View and ViewModel to create</string>
     <key>Type</key>
     <string>text</string>
     <key>Default</key>
-    <string>MyView</string>
+    <string>MyModel</string>
   </dict>
 </array>
 {% endhighlight %}
@@ -127,13 +127,13 @@ The full PList may look like this now:
       <key>Required</key>
       <true/>
       <key>Name</key>
-      <string>View:</string>
+      <string>Model:</string>
       <key>Description</key>
-      <string>The name of the View and ViewModel to create</string>
+      <string>The name of the Model, View and ViewModel to create</string>
       <key>Type</key>
       <string>text</string>
       <key>Default</key>
-      <string>MyView</string>
+      <string>MyModel</string>
     </dict>
   </array>
 </dict>
@@ -264,13 +264,13 @@ So now your PList should look like this:
       <key>Required</key>
       <true/>
       <key>Name</key>
-      <string>View:</string>
+      <string>Model:</string>
       <key>Description</key>
-      <string>The name of the View and ViewModel to create</string>
+      <string>The name of the Model, View and ViewModel to create</string>
       <key>Type</key>
       <string>text</string>
       <key>Default</key>
-      <string>MyView</string>
+      <string>MyModel</string>
     </dict>
     <dict>
       <key>Identifier</key>
